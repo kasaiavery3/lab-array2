@@ -37,7 +37,7 @@ Exercise 4:
 
 // Complete Exercise 4 below...
 
-
+let favFood = foods[1];
 
 console.log('Exercise 4 Result:\n', favFood);
 
@@ -48,7 +48,7 @@ Exercise 5:
 
 // Complete Exercise 5 below...
 
-
+foods.splice (2, 0, 'tofu');
 
 console.log('Exercise 5 Result:\n', foods);
 
@@ -59,7 +59,7 @@ Exercise 6:
 
 // Complete Exercise 6 below...
 
-
+foods.splice(1,1, 'sushi', 'cupcake');
 
 console.log('Exercise 6 Result:\n', foods);
 
@@ -71,7 +71,7 @@ Exercise 7:
 
 // Complete Exercise 7 below...
 
-
+const yummy = foods.slice(1,3);
 
 console.log('Exercise 7 Result:\n', yummy);
 
@@ -82,7 +82,7 @@ Exercise 8:
 
 // Complete Exercise 8 below...
 
-
+let soyIdx = foods.indexOf('tofu');
 
 console.log('Exercise 8 Result:\n', soyIdx);
 
@@ -94,7 +94,7 @@ Exercise 9:
 
 // Complete Exercise 9 below...
 
-
+let allFoods = foods.join('=>');
 
 console.log('Exercise 9 Result:\n', allFoods);
 
@@ -103,10 +103,12 @@ Exercise 10:
   - Assign a boolean to a variable named hasSoup depending upon whether or not the foods array includes the string 'soup'.
 */
 
-// Complete Exercise 10 below...
-
-
-
+// Complete Exercise 10 below.
+const isSoup = (element) => element === 'cupcake';
+let hasSoup = false;
+if (foods.findIndex(isSoup) !== -1) {
+hasSoup = true;
+}
 console.log('Exercise 10 Result:\n', hasSoup);
 
 /*
@@ -119,7 +121,12 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 // Complete Exercise 11 below...
 
-
+let odds = [];
+nums.forEach(_num => {
+if(_num % 2 !== 0) {
+odds.push(_num);
+} 
+})
 
 console.log('Exercise 11 Result:\n', odds);
 
@@ -132,7 +139,18 @@ Exercise 12:
 */
 
 // Complete Exercise 12 below...
-
+let fizz = [];
+ let buzz = [];
+ let fizzbuzz = [];
+ nums.forEach(_num => {
+   if (_num % 3 === 0 && _num % 5 === 0) {
+     fizzbuzz.push(_num);
+   } else if (_num % 3 === 0) {
+     fizz.push(_num);
+   } else if (_num % 5 === 0) {
+     buzz.push(_num);
+   }
+ })
 
 
 console.log('Exercise 12 Results:');
@@ -155,7 +173,8 @@ const numArrays = [
 
 // Complete Exercise 13 below...
 
-
+const numList = numArrays[numArrays.length-1];
+console.log('Exercise 13 Result:\n', numList);
 
 console.log('Exercise 13 Result:\n', numList);
 
@@ -166,7 +185,7 @@ Exercise 14:
 
 // Complete Exercise 14 below...
 
-
+let num = numArrays[2][1];
 
 console.log('Exercise 14 Result:\n', num);
 
@@ -178,6 +197,11 @@ Exercise 15:
 
 // Complete Exercise 15 below...
 
-
+let total = 0;
+numArrays.forEach((_num, idx) => {
+numArrays[idx].forEach (_num2 => {
+total += _num2;
+})
+});
 
 console.log('Exercise 15 Result:\n', total);
